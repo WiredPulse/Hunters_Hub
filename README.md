@@ -2,4 +2,7 @@
 Custom Splunk App
 
 
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+![Alt text](https://github.com/WiredPulse/Hunters_Hub/blob/master/Screen_Shot.png?raw=true "Optional Title")
+
+
+https://github.com/WiredPulse/Hunters_Hub/blob/master/Screen_Shot.png
