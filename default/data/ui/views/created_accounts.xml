@@ -1,0 +1,27 @@
+<form>
+  <label>Created Accounts</label>
+  <row>
+    <panel>
+      <title>Created Accounts</title>
+      <input type="time" token="field2" searchWhenChanged="true">
+        <label></label>
+        <default>
+          <earliest>-7d@h</earliest>
+          <latest>now</latest>
+        </default>
+      </input>
+      <table>
+        <search>
+          <query>EventCode=624 OR EventCode=4720 | eval User_Creating = mvindex(Account_Name,0) | eval Created_User = mvindex(Account_Name,1) | table _time User_Creating Created_User dest_nt_host | sort - _time</query>
+          <earliest>$field2.earliest$</earliest>
+          <latest>$field2.latest$</latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+</form>

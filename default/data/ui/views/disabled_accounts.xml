@@ -1,0 +1,51 @@
+<form>
+  <label>Disabled Accounts</label>
+  <row>
+    <panel>
+      <title>Disabled Accounts</title>
+      <input type="time" token="field5">
+        <label></label>
+        <default>
+          <earliest>-7d@h</earliest>
+          <latest>now</latest>
+        </default>
+      </input>
+      <table>
+        <search>
+          <query>EventCode=4725 | stats count by user, host, name</query>
+          <earliest>$field5.earliest$</earliest>
+          <latest>$field5.latest$</latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Failed Logins for Disabled Accounts</title>
+      <input type="time" token="field4">
+        <label></label>
+        <default>
+          <earliest>-7d@h</earliest>
+          <latest>now</latest>
+        </default>
+      </input>
+      <table>
+        <search>
+          <query>EventCode=4625 (Sub_Status="0xc0000072" OR Sub_Status="0xC0000072") | eval User = mvindex(Account_Name, 1)| table _time ComputerName User| sort - _time</query>
+          <earliest>$field4.earliest$</earliest>
+          <latest>$field4.latest$</latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+</form>

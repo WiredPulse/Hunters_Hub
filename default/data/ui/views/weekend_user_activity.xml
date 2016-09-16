@@ -1,0 +1,27 @@
+<form>
+  <label>Weekend User Activity</label>
+  <row>
+    <panel>
+      <title>Weekend User Activity</title>
+      <input type="time" token="field2" searchWhenChanged="true">
+        <label></label>
+        <default>
+          <earliest>-7d@h</earliest>
+          <latest>now</latest>
+        </default>
+      </input>
+      <table>
+        <search>
+          <query>sourcetype="WinEventLog:Security" (date_wday=saturday OR date_wday=sunday) Account_Name!="*$" | eval Account = mvindex(Account_Name, 1) | stats count by Account, EventCode,date_wday, _time</query>
+          <earliest>$field2.earliest$</earliest>
+          <latest>$field2.latest$</latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+</form>

@@ -1,0 +1,27 @@
+<form>
+  <label>Cleared Logs</label>
+  <row>
+    <panel>
+      <title>Cleared Logs</title>
+      <input type="time" token="field2" searchWhenChanged="true">
+        <label></label>
+        <default>
+          <earliest>-7d@h</earliest>
+          <latest>now</latest>
+        </default>
+      </input>
+      <table>
+        <search>
+          <query>host=* (EventCode=1102 OR EventCode=517) | eval Date=strftime(_time, "%Y/%m/%d") | stats count by Client_User_Name, host, index, Date | sort - Date | rename Client_User_Name as "Account Name"</query>
+          <earliest>$field2.earliest$</earliest>
+          <latest>$field2.latest$</latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+</form>

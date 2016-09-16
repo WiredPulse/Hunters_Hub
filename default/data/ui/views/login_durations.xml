@@ -1,0 +1,27 @@
+<form>
+  <label>Login Durations</label>
+  <row>
+    <panel>
+      <title>Login Durations</title>
+      <input type="time" token="field2" searchWhenChanged="true">
+        <label></label>
+        <default>
+          <earliest>-7d@h</earliest>
+          <latest>now</latest>
+        </default>
+      </input>
+      <table>
+        <search>
+          <query>(EventCode=4624 OR EventCode=4634) (Logon_Type=2 OR Logon_Type=10) | eval Date=strftime(_time, "%Y/%m/%d")| eval LogonType=case(Logon_Type="2", "Local Console Access", Logon_Type="10", "Remote Desktop via Terminal Services")| transaction host user startswith=EventCode=4624 endswith=EventCode=4634 | where duration &gt; 5 | eval duration = duration/60 | eval duration=round(duration,2)| table host, user, LogonType duration, Date | rename duration as "Session Duration in Minutes" | sort - date</query>
+          <earliest>$field2.earliest$</earliest>
+          <latest>$field2.latest$</latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+</form>
