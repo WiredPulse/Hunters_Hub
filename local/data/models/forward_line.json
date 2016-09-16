@@ -1,0 +1,74 @@
+{
+    "modelName": "forward_line",
+    "displayName": "forward_line",
+    "description": "",
+    "objectSummary": {
+        "Event-Based": 0,
+        "Transaction-Based": 0,
+        "Search-Based": 1
+    },
+    "objects": [
+        {
+            "objectName": "SearchObject",
+            "displayName": "Search Object",
+            "parentName": "BaseSearch",
+            "fields": [
+                {
+                    "fieldName": "host",
+                    "owner": "SearchObject",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "host",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "source",
+                    "owner": "SearchObject",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "source",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "sourcetype",
+                    "owner": "SearchObject",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "sourcetype",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "_time",
+                    "owner": "SearchObject",
+                    "type": "timestamp",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "_time",
+                    "comment": ""
+                }
+            ],
+            "calculations": [],
+            "constraints": [],
+            "lineage": "SearchObject",
+            "baseSearch": "index=\"_internal\" source=\"*metrics.lo*\" group=tcpin_connections NOT eventType=*  | eval sourceHost=if(isnull(hostname), sourceHost,hostname)  | eval connectionType=case(fwdType==\"uf\",\"universal forwarder\", fwdType==\"lwf\", \"lightweight forwarder\",fwdType==\"full\", \"heavy forwarder\", connectionType==\"cooked\" or connectionType==\"cookedSSL\",\"Splunk forwarder\", connectionType==\"raw\" or connectionType==\"rawSSL\",\"legacy forwarder\") | eval build=if(isnull(build),\"n/a\",build)  | eval version=if(isnull(version),\"pre 4.2\",version)  | eval os=if(isnull(os),\"n/a\",os) | eval arch=if(isnull(arch),\"n/a\",arch)  | eval lastReceived = case(kb>0, _time)  | eval seconds=30  | eval event_count= tcp_eps * seconds  | bin _time span=10m"
+        }
+    ],
+    "objectNameList": [
+        "SearchObject"
+    ]
+}

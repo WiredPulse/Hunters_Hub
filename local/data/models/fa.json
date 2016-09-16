@@ -1,0 +1,90 @@
+{
+    "modelName": "fa",
+    "displayName": "fa",
+    "description": "",
+    "objectSummary": {
+        "Event-Based": 1,
+        "Transaction-Based": 0,
+        "Search-Based": 0
+    },
+    "objects": [
+        {
+            "objectName": "EventObject",
+            "displayName": "Event Object",
+            "parentName": "BaseEvent",
+            "fields": [
+                {
+                    "fieldName": "Account_Name",
+                    "owner": "EventObject",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "Account_Name",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "host",
+                    "owner": "EventObject",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "host",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "source",
+                    "owner": "EventObject",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "source",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "sourcetype",
+                    "owner": "EventObject",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "sourcetype",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "_time",
+                    "owner": "EventObject",
+                    "type": "timestamp",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "_time",
+                    "comment": ""
+                }
+            ],
+            "calculations": [],
+            "constraints": [
+                {
+                    "search": "host =* (\"EventCode=675\" OR (\"EventCode=672\" AND Type=\"Failure Audit\")) OR (EventCode=4771 AND \"Audit Failure\") NOT Account_Name=\"*$\" NOT Failure_Code=0x1919 NOT Failure_Code=\"0xhost=*\" (Account_Name=\"*\")",
+                    "owner": "EventObject"
+                }
+            ],
+            "lineage": "EventObject"
+        }
+    ],
+    "objectNameList": [
+        "EventObject"
+    ]
+}

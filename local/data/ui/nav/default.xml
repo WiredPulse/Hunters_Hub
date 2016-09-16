@@ -1,0 +1,54 @@
+<nav>
+	<view name="about" default="true"/>
+
+<collection label="Forwarder Data">	
+	<view name="forwarders"/>
+</collection>
+
+	<collection label="Login events">
+		<view name="success_vs_failed_logins"/> 
+		<view name="runas_invoked"/>
+		<view name="active_directory_failed_logins"/>
+		<view name="active_directory_successful_logins"/>
+		<view name="ntlm_failed_logins"/>
+		<view name="ntlm_successful_logins_clone"/>
+		<view name="disabled_accounts"/>		
+		<view name="rdp_successful_logins"/>
+		<view name="after_hour_logins"/>
+		<view name="login_durations"/>
+		<view name="top_users_by_computers"/>
+		<view name="weekend_user_activity"/>		
+	</collection>
+
+    <collection label="User\Group management">
+	    <view name="created_accounts"/>
+		<view name="password_changes"/>
+        <view name="locked_accounts"/>
+        <view name="group_management"/>
+        <view name="time_between_account_creation__deletion"/>
+		<view name="accounts_enabled_by_user"/>
+    </collection>
+
+	<collection label="Weird">
+		<view name="concurrent_system_logins"/>
+		<view name="nonexisting_account_failed_login"/>
+        <view name="cleared_logs"/>
+		<view name="shutdown_or_suspended_services"/>
+		<view name="process_tracking"/>
+		<view name="granted_access_from_networkterminal_services"/>
+		<view name="software_installations"/>
+		<view name="share_drive_auditing"/>
+    </collection>
+	
+	<collection label="Windows firewall">
+		<view name="firewall_stats"/>
+    </collection>
+
+
+	<collection label="Saved Searches">
+            <saved source="all" match="Windows -" view="flashtimeline"/>
+        </collection>
+
+	<view name="search"/>
+
+</nav>

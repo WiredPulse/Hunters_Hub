@@ -1,0 +1,509 @@
+[app/ui]
+version = 6.4.1
+modtime = 1469699063.531372300
+
+[app/launcher]
+version = 6.4.1
+modtime = 1469699063.538372700
+
+[views/forwarders]
+owner = admin
+version = 6.4.1
+modtime = 1469751954.316734200
+
+[views/success_vs_failed_logins]
+owner = admin
+version = 6.4.1
+modtime = 1469753091.918801300
+
+[views/runas_invoked]
+owner = admin
+version = 6.4.3
+modtime = 1477014276.646906600
+
+[views/active_directory_failed_logins]
+owner = admin
+version = 6.4.1
+modtime = 1470696655.593962000
+
+[app/install/install_source_checksum]
+version = 6.4.3
+modtime = 1477023460.576230200
+
+[views/active_directory_successful_logins]
+owner = admin
+version = 6.4.1
+modtime = 1470696593.452407700
+
+[views/ntlm_failed_logins]
+owner = admin
+version = 6.4.1
+modtime = 1470698716.223424100
+
+[views/ntlm_successful_logins_clone]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470699231.505896600
+
+[views/disabled_accounts]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470702269.803798900
+
+[views/group_management]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470741305.021665300
+
+[views/accounts_enabled_by_user]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470775172.453505600
+
+[views/after_hour_logins]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470791845.982176900
+
+[views/created_accounts]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470774122.669461400
+
+[views/locked_accounts]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470774133.741094700
+
+[views/login_durations]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470774144.517711100
+
+[views/password_changes]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470774155.800356400
+
+[views/rdp_successful_logins]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470774167.895048200
+
+[views/time_between_account_creation__deletion]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470774298.456515900
+
+[views/top_users_by_computers]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470774197.449738600
+
+[views/weekend_user_activity]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470774208.758385400
+
+[views/concurrent_system_logins]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470775747.686407100
+
+[views/nonexisting_account_failed_login]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470790038.948820500
+
+[views/cleared_logs]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470790202.774190800
+
+[views/shutdown_or_suspended_services]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470790713.367395100
+
+[views/process_tracking]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470791103.140688800
+
+[views/granted_access_from_networkterminal_services]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470793936.452745000
+
+[views/allowed_connections]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470795607.492545000
+
+[views/firewall_stats]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470796090.569175400
+
+[views/software_installations]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470796463.963532300
+
+[views/suspicious_behavior]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470797860.193392100
+
+[views/share_drive_auditing]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.4.1
+modtime = 1470802515.068635800
+
+[panels/associated_accounts]
+owner = admin
+version = 6.4.3
+modtime = 1477014014.005884400
+
+[panels/newassociated_accounts]
+owner = admin
+version = 6.4.3
+modtime = 1477014196.616329100
+
+[]
+access = read : [ * ], write : [ admin, power ]
+export = system
+version = 6.4.3
+modtime = 1477015036.443364500
+
+[datamodels/ruas]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018584.379602700
+
+[models/ruas]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018584.388603200
+
+[datamodels/qq]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018588.977865700
+
+[models/qq]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018589.030868800
+
+[datamodels/q1]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018594.082157700
+
+[models/q1]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018594.092158200
+
+[datamodels/forward_line]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018611.700165400
+
+[models/forward_line]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018611.779169900
+
+[datamodels/non]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018598.366402700
+
+[models/non]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018598.375403200
+
+[datamodels/failed_2]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018607.637933000
+
+[models/failed_2]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018607.647933600
+
+[datamodels/failed22]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018619.830630400
+
+[models/failed22]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018619.839630900
+
+[datamodels/fail2]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018628.343117300
+
+[models/fail2]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018628.353117900
+
+[datamodels/fail]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018556.007980000
+
+[models/fail]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018556.016980500
+
+[datamodels/fa]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018632.289343000
+
+[models/fa]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018632.347346300
+
+[datamodels/f11]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018526.620299100
+
+[models/f11]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018526.683302700
+
+[datamodels/f1]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018492.677357700
+
+[models/f1]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018492.693358600
+
+[datamodels/dash]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018499.431744000
+
+[models/dash]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018499.449745000
+
+[datamodels/az]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018505.917114900
+
+[models/az]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018505.943116400
+
+[datamodels/a]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018513.347539900
+
+[models/a]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018513.362540800
+
+[datamodels/success_vs_failed]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018741.972616500
+
+[models/success_vs_failed]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018741.988617400
+
+[datamodels/services]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018749.024019800
+
+[models/services]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018749.040020800
+
+[datamodels/s12]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018756.783463700
+
+[models/s12]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018756.799464600
+
+[datamodels/s1]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018765.883984200
+
+[models/s1]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018765.941987500
+
+[datamodels/runas_pie]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018773.571423900
+
+[models/runas_pie]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 6.4.3
+modtime = 1477018773.590425000
+
+[views/about]
+version = 6.4.3
+modtime = 1477021398.263547700

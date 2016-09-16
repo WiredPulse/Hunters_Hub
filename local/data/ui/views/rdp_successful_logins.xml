@@ -1,0 +1,27 @@
+<form>
+  <label>RDP Successful Logins</label>
+  <row>
+    <panel>
+      <title>RDP Successful Logins</title>
+      <input type="time" token="field5">
+        <label></label>
+        <default>
+          <earliest>-7d@h</earliest>
+          <latest>now</latest>
+        </default>
+      </input>
+      <table>
+        <search>
+          <query>host=* (EventCode=528 OR EventCode=4624) Logon_Type=10 | eval Account = mvindex(Account_Name, 1) | table  _time Account src_ip dest | sort - _time</query>
+          <earliest>$field5.earliest$</earliest>
+          <latest>$field5.latest$</latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+</form>

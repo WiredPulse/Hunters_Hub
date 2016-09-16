@@ -1,0 +1,51 @@
+<form>
+  <label>Forwarders</label>
+  <row>
+    <panel>
+      <title>Forwarder Data</title>
+      <input type="time" token="field2" searchWhenChanged="true">
+        <label></label>
+        <default>
+          <earliest>-7d@h</earliest>
+          <latest>now</latest>
+        </default>
+      </input>
+      <table>
+        <search>
+          <query>index=_internal sourcetype=splunkd destPort!="-"| stats sparkline count by hostname, sourceHost, host, destPort, version | rename destPort as "Destination Port" | rename host as "Indexer" | rename sourceHost as "Universal Forwarder IP" | rename version as "Splunk Forwarder Version" | rename hostname as "Universal Forwarder Host Name" | rename sparkline as "Traffic Frequency" | sort - count</query>
+          <earliest>$field2.earliest$</earliest>
+          <latest>$field2.latest$</latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Time Forwarders Checked In</title>
+      <input type="time" token="field1" searchWhenChanged="true">
+        <label></label>
+        <default>
+          <earliest>-7d@h</earliest>
+          <latest>now</latest>
+        </default>
+      </input>
+      <table>
+        <search>
+          <query>index="_internal" source="*metrics.lo*" group=tcpin_connections NOT eventType=* | eval sourceHost=if(isnull(hostname), sourceHost,hostname) | eval connectionType=case(fwdType=="uf","universal forwarder", fwdType=="lwf", "lightweight forwarder",fwdType=="full", "heavy forwarder", connectionType=="cooked" or connectionType=="cookedSSL","Splunk forwarder", connectionType=="raw" or connectionType=="rawSSL","legacy forwarder")| eval build=if(isnull(build),"n/a",build) | eval version=if(isnull(version),"pre 4.2",version) | eval os=if(isnull(os),"n/a",os)| eval arch=if(isnull(arch),"n/a",arch) | eval lastReceived = case(kb&gt;0, _time) | eval seconds=30 | eval event_count= tcp_eps * seconds | bin _time span=10m | stats first(connectionType) as connectionType first(version) as version max(_time) as lastConnected max(lastReceived) as lastReceived sum(kb) as kbTotal  sum(event_count) as events sum(seconds) as secs by sourceHost _time | stats first(connectionType) as connectionType first(version) as version max(lastConnected) as lastConnected max(lastReceived) as lastReceived by sourceHost | eval LastReceived=strftime(lastReceived, "%Y/%m/%d %H:%M:%S") | fields sourceHost, connectionType, LastReceived | sort + LastReceived</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+</form>

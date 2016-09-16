@@ -1,0 +1,28 @@
+<form>
+  <label>Share Drive Access</label>
+  <row>
+    <panel>
+      <title>Share Drive Access Details</title>
+      <input type="time" token="field2" searchWhenChanged="true">
+        <label></label>
+        <default>
+          <earliest>-7d@h</earliest>
+          <latest>now</latest>
+        </default>
+      </input>
+      <table>
+        <title>(Note: You must add the accounts to monitor for in the properties of the file or folder)</title>
+        <search>
+          <query>EventCode=5145 Share_Path!="*sysvol" | table _time,  Accesses, user, Relative_Target_Name, Share_Path, Source_Address, Keywords</query>
+          <earliest>$field2.earliest$</earliest>
+          <latest>$field2.latest$</latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+</form>

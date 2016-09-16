@@ -1,0 +1,27 @@
+<form>
+  <label>Process Tracking</label>
+  <row>
+    <panel>
+      <title>Started Processes</title>
+      <input type="time" token="field2" searchWhenChanged="true">
+        <label></label>
+        <default>
+          <earliest>-7d@h</earliest>
+          <latest>now</latest>
+        </default>
+      </input>
+      <table>
+        <search>
+          <query>EventCode="592" OR EventCode="4688" NOT User="SYSTEM" NOT User="NETWORK SERVICE" | table _time dest_nt_host New_Process_Name</query>
+          <earliest>$field2.earliest$</earliest>
+          <latest>$field2.latest$</latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+</form>

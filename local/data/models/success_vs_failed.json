@@ -1,0 +1,86 @@
+{
+    "modelName": "success_vs_failed",
+    "displayName": "success_vs_failed",
+    "description": "",
+    "objectSummary": {
+        "Event-Based": 0,
+        "Transaction-Based": 0,
+        "Search-Based": 1
+    },
+    "objects": [
+        {
+            "objectName": "SearchObject",
+            "displayName": "Search Object",
+            "parentName": "BaseSearch",
+            "fields": [
+                {
+                    "fieldName": "host",
+                    "owner": "SearchObject",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "host",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "source",
+                    "owner": "SearchObject",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "source",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "sourcetype",
+                    "owner": "SearchObject",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "sourcetype",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "status",
+                    "owner": "SearchObject",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "status",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "_time",
+                    "owner": "SearchObject",
+                    "type": "timestamp",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "_time",
+                    "comment": ""
+                }
+            ],
+            "calculations": [],
+            "constraints": [],
+            "lineage": "SearchObject",
+            "baseSearch": "source=\"WinEventLog:security\" (Logon_Type=2 OR Logon_Type=7 OR Logon_Type=10) (EventCode=528 OR EventCode=540 OR EventCode=4624 OR EventCode=4625 OR EventCode=529 OR EventCode=530 OR EventCode=531 OR EventCode=532 OR EventCode=533 OR EventCode=534 OR EventCode=535 OR EventCode=536 OR EventCode=537 OR EventCode=539)  | eval status=case(EventCode=528, \"Successful Logon\", EventCode=540, \"Successful Logon\", EventCode=4624, \"Successful Logon\", EventCode=4625, \"Failed Logon\", EventCode=529, \"Failed Logon\", EventCode=530, \"Failed Logon\", EventCode=531, \"Failed Logon\", EventCode=532, \"Failed Logon\", EventCode=533, \"Failed Logon\", EventCode=534, \"Failed Logon\", EventCode=535, \"Failed Logon\", EventCode=536, \"Failed Logon\", EventCode=537, \"Failed Logon\", EventCode=539, \"Failed Logon\")"
+        }
+    ],
+    "objectNameList": [
+        "SearchObject"
+    ]
+}

@@ -1,0 +1,28 @@
+<form>
+  <label>Granted Access from Network\Terminal Services</label>
+  <row>
+    <panel>
+      <title>Granted Access from Network\Terminal Services</title>
+      <input type="time" token="field2" searchWhenChanged="true">
+        <label></label>
+        <default>
+          <earliest>-7d@h</earliest>
+          <latest>now</latest>
+        </default>
+      </input>
+      <table>
+        <search>
+          <query>EventCode=4717 OR EventCode=621 Access_Right=SeServiceLogonRight | eval Date=strftime(_time, "%Y/%m/%d") | 
+eval Access = case(Access_Right = "SeServiceLogonRight","Access Computer from Network", Access_Right = "SeRemoteInteractiveLogonRight","Allow Logon through Terminal Services")  | eval Adding_User = mvindex(Account_Name, 0) | eval Member_Added = mvindex(Account_Name, 1) |table _time Access Adding_User Member_Added dest_nt_host</query>
+          <earliest>$field2.earliest$</earliest>
+          <latest>$field2.latest$</latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+</form>

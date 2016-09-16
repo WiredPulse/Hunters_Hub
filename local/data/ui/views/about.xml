@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?><dashboard>
+  <label>About</label>
+  <row>
+    <panel>
+      <html>
+      <h1>Welcome to the Hunter's hub!</h1>
+      <br/>
+
+	This application allows you to see all relevant security information about your Windows systems. The application was built with hunters in mind - almost any information a hunter would like to see is available and visualized.<br/>
+      <br/>
+
+	Keep in mind that certain logs are not available on Windows operating systems by default. A list of specific auditing entries that need to be enabled for this application to function along with the event ID that is generated are located below.<br/>
+      <br/>
+
+	Account Logon <br/>
+		o Credential Validation (4776) <br/>
+		o Kerberos Authentication Service (4771)<br/>
+      <br/>
+	Account Management<br/>
+		o Security Group Management (4732, 4733, 4728, 4729)<br/>
+		o User Account Management (4720, 4722, 4723, 4724, 4725, 4726)<br/>
+      <br/>
+	Logon\Logoff<br/>
+		o Logoff (4625, 4634)<br/>
+		o Logon (4624, 4648, 4625)<br/>
+      <br/>
+	Object Access<br/>
+		o File System (4663)<br/>
+		o Detailed File Share (5145)<br/>
+		o Filtering Platform Connection (5154, 5155, 5156, 5157, 5158, 5159)<br/>
+		o Filtering Platform Packet Drop (5152, 5153)<br/>
+      <br/>
+	Detailed Tracking <br/>
+		o Process Creation (592, 4688) <br/>
+		o Process Termination (4689) <br/>
+      <br/>
+	Policy Change<br/>
+		o Authentication Policy Change (4717, 4718)<br/>
+		o MPSSVC Rule-Level Policy Change (4946, 4947, 4948)<br/>
+      <br/>
+	</html>
+    </panel>
+  </row>
+</dashboard>
